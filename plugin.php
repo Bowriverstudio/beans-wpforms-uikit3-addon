@@ -21,14 +21,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Hello, Hello, Hello, what\'s going on here then?' );
 }
 
+require_once 'lib/filters.php';
+
+
 if( defined('BEANS_FRONTEND_FRAMEWORK') ){
 
     define( 'BEANS_WPFORMS_PLUGIN_PATH', plugin_dir_path(__FILE__)  );
 
     require_once 'lib/wp-cli.php';
 
-    if( is_admin()){
-    }
 }
 
 /**
