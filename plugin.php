@@ -21,7 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Hello, Hello, Hello, what\'s going on here then?' );
 }
 
-require_once 'lib/filters.php';
+
+require_once 'lib/uikit3.php';
 
 
 if( defined('BEANS_FRONTEND_FRAMEWORK') ){
