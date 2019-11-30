@@ -29,7 +29,7 @@ function init()
     require_once 'lib/uikit3.php';
 
     if (is_admin()) {
-        require_once 'lib/affilate.php';
+        require_once 'lib/affiliate.php';
 
     }
 
