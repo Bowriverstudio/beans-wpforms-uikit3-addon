@@ -13,10 +13,10 @@ namespace Beans_WPForms_Uikit3_Addon;
  */
 function update_wpforms_styling_option(int $setting){
     $wpforms_settings = get_option('wpforms_settings');
-    if( is_array($wpforms_settings) && array_key_exists('disable-css', $wpforms_settings)) {
+//    d($wpforms_settings);
+//    if( is_array($wpforms_settings) && array_key_exists('disable-css', $wpforms_settings)) {
         $wpforms_settings['disable-css'] = $setting;
         update_option('wpforms_settings', $wpforms_settings);
-    }
+//    }
 }
 
-update_wpforms_styling_option(3);

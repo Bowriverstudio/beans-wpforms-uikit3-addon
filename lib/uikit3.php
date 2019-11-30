@@ -44,3 +44,21 @@ function wpforms_field_properties(array $properties, array $field){
 
     return $properties;
 }
+
+add_filter( 'render_block', __NAMESPACE__.'\render_block', 10, 4  );
+/**
+ * Replace stripped @ char from uikit classes.
+ *
+ * Note - the function wpforms_sanitize_classes strips the "@" from the class.
+ * @todo - can add support of other classes.
+ *
+ * @param string $block_content
+ * @param array $block
+ * @return string
+ */
+function render_block( string $block_content, array $block){
+    if( $block['blockName'] == 'wpforms/form-selector'){
+        $block_content = str_replace('uk-width-1-2m', 'uk-width-1-2@m', $block_content);
+    }
+    return $block_content;
+}

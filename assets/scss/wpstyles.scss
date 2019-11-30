@@ -1,0 +1,16 @@
+.wpforms-label-hide, .wpforms-field-hp {
+  display: none;
+}
+
+.wpforms-error{
+
+  &.uk-input, &.uk-textarea{
+    border: 1px solid #ddd;
+
+    background:lighten(mix(white, $global-danger-background, 40%), 20%) !important;
+    color: $global-danger-background;
+
+  }
+  color:$text-danger-color;
+}
+

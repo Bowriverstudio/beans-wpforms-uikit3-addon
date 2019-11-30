@@ -39,7 +39,7 @@ if ( class_exists( 'WPForms_Template', false ) ) :
                         'size' => 'medium',
                         'simple_placeholder' => 'Name',
                         'label_hide' => '1',
-                        'css' => 'uk-width-1-2',
+                        'css' => 'uk-width-1-2@m',
                     ),
                     1 => array (
                         'id' => '1',
@@ -49,7 +49,7 @@ if ( class_exists( 'WPForms_Template', false ) ) :
                         'size' => 'medium',
                         'placeholder' => 'Email',
                         'label_hide' => '1',
-                        'css' => 'uk-width-1-2',
+                        'css' => 'uk-width-1-2@m',
                     ),
                     2 => array (
                         'id' => '2',
@@ -68,7 +68,7 @@ if ( class_exists( 'WPForms_Template', false ) ) :
                     'form_title' => 'Contact Form',
                     'submit_text' => 'Submit',
                     'submit_text_processing' => 'Sending...',
-                    'submit_class' => 'uk-button uk-button-primary',
+                    'submit_class' => 'uk-button uk-button-primary uk-margin-top',
                     'honeypot' => '1',
                     'dynamic_population' => '1',
                     'ajax_submit' => '1',
