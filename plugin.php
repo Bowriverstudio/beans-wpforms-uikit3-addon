@@ -2,7 +2,7 @@
 /**
  * Beans using uikit 3 and wp forms
  *
- * https://getuikit.com/v2/
+ * https://getuikit.com/
  *
  * @package    Beans_WPForms_Uikit3_Addon
  * @since      0.1
@@ -15,20 +15,31 @@
  * Description:     An Addon for wpforms that uses Beans and uikit 3: Plugin is free as beer and In Development.
  *
  */
+
 namespace Beans_WPForms_Uikit3_Addon;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 'Hello, Hello, Hello, what\'s going on here then?' );
+if (!defined('ABSPATH')) {
+    exit('Hello, Hello, Hello, what\'s going on here then?');
+}
+
+add_action('init', __NAMESPACE__ . '\init');
+function init()
+{
+    require_once 'lib/functions.php';
+    require_once 'lib/uikit3.php';
+
+    if (is_admin()) {
+        require_once 'lib/affilate.php';
+
+    }
+
+
 }
 
 
-require_once 'lib/functions.php';
-require_once 'lib/uikit3.php';
+if (defined('BEANS_FRONTEND_FRAMEWORK')) {
 
-
-if( defined('BEANS_FRONTEND_FRAMEWORK') ){
-
-    define( 'BEANS_WPFORMS_PLUGIN_PATH', plugin_dir_path(__FILE__)  );
+    define('BEANS_WPFORMS_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
     require_once 'lib/wp-cli.php';
 
@@ -40,17 +51,18 @@ if( defined('BEANS_FRONTEND_FRAMEWORK') ){
  * Version:     1.0.0
  */
 
-add_action( 'wpforms_loaded', __NAMESPACE__ .'\wpf_load_contact_templates' );
+add_action('wpforms_loaded', __NAMESPACE__ . '\wpf_load_contact_templates');
 /**
  * Load the wp-forms contact template.
  *
  * @TODO extend to allow multiple templates to be defined.
  * @TODO handle support for lite and pro.
  */
-function wpf_load_contact_templates() {
+function wpf_load_contact_templates()
+{
 
     require_once 'lib/onboarding.php';
 
     // Template code here
-   include_once( get_contact_template_path() );
+    include_once(get_contact_template_path());
 }
