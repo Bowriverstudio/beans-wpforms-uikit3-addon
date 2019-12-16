@@ -36,10 +36,9 @@ function init()
 
 }
 
+define('BEANS_WPFORMS_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
 if (defined('BEANS_FRONTEND_FRAMEWORK')) {
-
-    define('BEANS_WPFORMS_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
     require_once 'lib/wp-cli.php';
 
